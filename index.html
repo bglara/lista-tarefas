@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A lightweight and responsive to-do list built with vanilla HTML, CSS, and JavaScript."
+  />
+  <title>Task List App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-labelledby="app-title">
+    <header class="app__header">
+      <div>
+        <h1 id="app-title">Task List</h1>
+        <p class="app__subtitle">Stay organized with a simple to-do manager.</p>
+      </div>
+      <button
+        id="theme-toggle-button"
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to dark mode"
+      >
+        Dark Mode
+      </button>
+    </header>
+
+    <section class="task-creator" aria-label="Create a new task">
+      <label class="visually-hidden" for="task-input">Task description</label>
+      <input
+        id="task-input"
+        type="text"
+        placeholder="Type a new task..."
+        maxlength="120"
+        autocomplete="off"
+      />
+      <label class="visually-hidden" for="task-category-input">Task category</label>
+      <input
+        id="task-category-input"
+        type="text"
+        placeholder="Category (e.g. Work)"
+        maxlength="40"
+        autocomplete="off"
+      />
+      <label class="visually-hidden" for="task-due-date-input">Task due date</label>
+      <input id="task-due-date-input" type="date" />
+      <button id="add-task-button" type="button">Add Task</button>
+    </section>
+
+    <section class="task-stats" aria-live="polite" aria-label="Task statistics">
+      <span id="total-count">Total: 0</span>
+      <span id="pending-count">Pending: 0</span>
+      <span id="completed-count">Completed: 0</span>
+    </section>
+
+    <section class="task-filters" aria-label="Task filters">
+      <button type="button" class="filter-button is-active" data-filter="all">Total</button>
+      <button type="button" class="filter-button" data-filter="pending">Pending</button>
+      <button type="button" class="filter-button" data-filter="completed">Completed</button>
+    </section>
+
+    <section class="advanced-filters" aria-label="Advanced filters">
+      <div class="advanced-filters__header">
+        <h2>Advanced Filters</h2>
+        <button id="clear-filters-button" type="button" class="clear-filters-button">Clear Filters</button>
+      </div>
+      <div class="advanced-filters__grid">
+        <div class="filter-control">
+          <label for="search-input">Search task text</label>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search text"
+            autocomplete="off"
+          />
+        </div>
+        <div class="filter-control">
+          <label for="category-filter-select">Category</label>
+          <select id="category-filter-select">
+            <option value="all">All categories</option>
+          </select>
+        </div>
+        <div class="filter-control">
+          <label for="date-from-input">Due date from</label>
+          <input id="date-from-input" type="date" />
+        </div>
+        <div class="filter-control">
+          <label for="date-to-input">Due date to</label>
+          <input id="date-to-input" type="date" />
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Task list">
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-state" class="empty-state">No tasks yet. Add your first one!</p>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
