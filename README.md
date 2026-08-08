@@ -3,6 +3,11 @@
 A lightweight and responsive to-do list built with plain HTML, CSS, and JavaScript.
 No frameworks, no build tools, and no external dependencies.
 
+**[Live demo](https://bglara.github.io/lista-tarefas/)**
+
+Built to see how far a task manager can go with categories, due dates, layered
+filtering, fuzzy search, theming and persistence, using nothing but the platform.
+
 ## Core Features
 
 - Add tasks using:
